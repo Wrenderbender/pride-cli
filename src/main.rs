@@ -40,7 +40,7 @@ struct Args {
 }
 
 fn main() {
-    bar_flag(HASHMAP.get(&Args::parse().flag).unwrap().try_into().unwrap());
+    bar_flag(HASHMAP.get(&Args::parse().flag).unwrap());
 }
 
 fn bar_flag(flag: &Vec<&str>){
