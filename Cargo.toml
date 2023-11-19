@@ -7,7 +7,7 @@ description = "A CLI tool that outputs various pride flags"
 readme = "README.md"
 homepage = "https://github.com/Wrenderbender/pride-cli"
 repository = "https://github.com/Wrenderbender/pride-cli"
-license = "GLP-3.0-only"
+license = "GPL-3.0-only"
 keywords = ["lgbt", "pride", "terminal"]
 
 
