@@ -7,21 +7,26 @@ use terminal_size::terminal_size;
 
 
 static CLEAR:&str  = "\x1b[0m";
-static PRIDE_RBG:[&str; 6] = [
+static PRIDE_RGB:[&str; 6] = [
     "\x1b[38;2;254;0;0m", "\x1b[38;2;254;141;0m", "\x1b[38;2;255;238;0m", "\x1b[38;2;1;129;20m", "\x1b[38;2;1;76;255m",
 "\x1b[38;2;138;1;140m"
 ];
-static TRANS_RBG:[&str; 5] = [
+static TRANS_RGB:[&str; 5] = [
     "\x1b[38;2;91;207;250m", "\x1b[38;2;245;171;185m", "\x1b[38;2;255;255;255m", "\x1b[38;2;245;171;185m", "\x1b[38;2;91;207;250m"
+];
+static BI_RGB:[&str; 5] = [
+    "\x1b[38;2;214;2;112m", "\x1b[38;2;214;2;112m", "\x1b[38;2;155;79;150m", "\x1b[38;2;0;56;168m", "\x1b[38;2;0;56;168m"
 ];
 static BLOCK:&str = "█";
 
 lazy_static! {
     static ref HASHMAP: HashMap<String, Vec<&'static str>> = {
         let mut m = HashMap::new();
-        m.insert("pride".to_string(), PRIDE_RBG.to_vec());
-        m.insert("trans".to_string(), TRANS_RBG.to_vec());
-        m.insert("transgender".to_string(), TRANS_RBG.to_vec());
+        m.insert("pride".to_string(), PRIDE_RGB.to_vec());
+        m.insert("trans".to_string(), TRANS_RGB.to_vec());
+        m.insert("transgender".to_string(), TRANS_RGB.to_vec());
+        m.insert("bisexual".to_string(), BI_RGB.to_vec());
+        m.insert("bi".to_string(), BI_RGB.to_vec());
         m
     };
 }
