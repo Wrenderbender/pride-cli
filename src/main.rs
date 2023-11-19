@@ -40,7 +40,13 @@ struct Args {
 }
 
 fn main() {
-    bar_flag(HASHMAP.get(&Args::parse().flag).unwrap());
+    let flag = HASHMAP.get(&Args::parse().flag);
+    let mut f: Vec<&str> = Vec::new();
+    match flag{
+        None => {eprintln!("\x1b[38;2;255;0;0mCannot find provided flag argument{}",CLEAR);return;},
+        Some(x) => f = x.to_vec(),
+    }
+    bar_flag(&f);
 }
 
 fn bar_flag(flag: &Vec<&str>){
