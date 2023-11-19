@@ -47,35 +47,35 @@ struct Args {
 fn main() {
     let flag = HASHMAP.get(&Args::parse().flag);
     let mut f: Vec<&str> = Vec::new();
-    match flag{
+    match flag {
         None => {eprintln!("\x1b[38;2;255;0;0mCannot find provided flag argument{}",CLEAR);return;},
         Some(x) => f = x.to_vec(),
     }
     bar_flag(&f);
 }
 
-fn bar_flag(flag: &Vec<&str>){
+fn bar_flag(flag: &Vec<&str>) {
     //Takes a flag which has only bars and parses args, outputs it. Default height/width fills entire terminal screen
     let args = Args::parse();
     let mut width = args.width;
     let mut height = args.height;
 
-    if height<(flag.len() as u32) && height!=0{
+    if height<(flag.len() as u32) && height!=0 {
         eprintln!("Flag height is less then set height!");
         return;
     }
-    if args.width == 0{
+    if args.width == 0 {
        width = terminal_size().unwrap().0.0 as u32;
     } 
-    if args.height == 0{
+    if args.height == 0 {
         height = terminal_size().unwrap().1.0 as u32/(flag.len() as u32);
 
     }
     let mut blocks = "".to_string();
-    for _ in 0..width{
+    for _ in 0..width {
         blocks.push_str(BLOCK);
     }
-    for i in flag{
+    for i in flag {
         for _ in 0..height{
             println!("{}{}{}",i,blocks,CLEAR);
         }
