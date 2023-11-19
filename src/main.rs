@@ -1,8 +1,8 @@
 use std::collections::HashMap;
 
-use clap::{Parser, Arg};
+use clap::Parser;
 use lazy_static::lazy_static;
-use terminal_size::{terminal_size};
+use terminal_size::terminal_size;
 
 
 
